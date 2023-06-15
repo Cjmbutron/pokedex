@@ -1,0 +1,20 @@
+.div{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+    margin-bottom: 3px;
+    justify-content: space-evenly;
+}
+
+.boton{
+    margin: 5px 2px;
+    padding: 10px 15px;
+    background: var(--bg-gradient);
+    size: 1.5rem;
+    border-radius: 25px;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 800px) {
+    
+}

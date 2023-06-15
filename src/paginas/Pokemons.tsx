@@ -4,10 +4,12 @@ import { fetchPokemons } from "../api/fetchPokemons";
 import Footer from "../componentes/footer";
 import Header from "../componentes/header";
 import LoadingScreen from "../componentes/LoadingScreen";
+import LigasPokemon from "../componentes/ligaspokemon";
 
 import { Pokemon } from "../types/Types";
 import { waitFor } from "../utils/utils";
 import styles from "./pokemons.module.css";
+import Botones from "../componentes/ligaspokemon";
 
 const Pokemons = () => {
   const [query, setQuery] = useState("");
@@ -29,7 +31,7 @@ const Pokemons = () => {
     return <LoadingScreen />;
   }
 
-  const filteredPokemons = pokemons?.slice(0, 161).filter((pokemon) => {
+  const filteredPokemons = pokemons?.slice(0, 151).filter((pokemon) => {
     return pokemon.name.toLowerCase().match(query.toLowerCase());
   });
 
@@ -38,7 +40,7 @@ const Pokemons = () => {
       <Header query={query} setQuery={setQuery} />
       <main>
         <nav className={styles.nav}>
-          {filteredPokemons?.slice(0, 161).map((pokemon) => (
+          {filteredPokemons?.slice(0, 151).map((pokemon) => (
             <Link
               key={pokemon.id}
               className={styles.listItem}
@@ -50,8 +52,8 @@ const Pokemons = () => {
                 alt={pokemon.name}
               />
               <div className={styles.listItemText}>
-                <span>{pokemon.name}</span>
-                <span>{pokemon.id}</span>
+                <h4 >{pokemon.name}</h4>
+                <h5>{pokemon.id}</h5>
               </div>
             </Link>
           ))}

@@ -1,6 +1,5 @@
 import  styles from "./header.module.css"
 
-
     type HeaderProps = {
         query: string;
         setQuery: (query: string) => void;
