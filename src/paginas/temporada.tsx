@@ -9,9 +9,8 @@ import LigasPokemon from "../componentes/ligaspokemon";
 import { Pokemon } from "../types/Types";
 import { waitFor } from "../utils/utils";
 import styles from "./pokemons.module.css";
-import Botones from "../componentes/ligaspokemon";
 
-const Pokemons = () => {
+const Temporada = () => {
   const [query, setQuery] = useState("");
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -40,29 +39,11 @@ const Pokemons = () => {
       <Header query={query} setQuery={setQuery} />
       <LigasPokemon/>
       <main>
-        <nav className={styles.nav}>
-          {filteredPokemons?.slice(0, 151).map((pokemon) => (
-            <Link
-              key={pokemon.id}
-              className={styles.listItem}
-              to={`/pokemons/${pokemon.name.toLowerCase()}`}
-            >
-              <img
-                className={styles.listItemIcon}
-                src={pokemon.imgSrc}
-                alt={pokemon.name}
-              />
-              <div className={styles.listItemText}>
-                <h4 >{pokemon.name}</h4>
-                <h5>{pokemon.id}</h5>
-              </div>
-            </Link>
-          ))}
-        </nav>
+        
       </main>
       <Footer />
     </>
   );
 };
 
-export default Pokemons;
+export default Temporada;

@@ -9,14 +9,17 @@ export async function fectchPokemon(
         throw new Error(response.statusText)
     }
     const result = await response.json()
+    
     const pokemon = {
+        
         name: result.name,
         id: result.id,
-        imgSrc: result.sprites.front_default,
+        imgSrc: result.sprites.other.dream_world.front_default,
         hp: result.stats[0].base_stat,
         attack: result.stats[1].base_stat,
         defense: result.stats[2].base_stat
     }
+    console.log(pokemon.imgSrc);
     return pokemon
 
 
